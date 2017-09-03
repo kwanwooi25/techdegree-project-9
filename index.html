@@ -4,26 +4,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KW Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <!-- header with App name, notification icon & user avatar -->
-    <header class="header__main">
-      <h1 class="app-name">KW Dashboard</h1>
-      <img class="notification" src="" alt=""> <!-- notification icon -->
-      <div class="avatar"> <!-- avatar section -->
-        <img class="avatar__image" src="" alt="">  <!-- avatar image -->
-        <span class="avatar__name">Kwanwoo Jeong</span> <!-- avatar name -->
-      </div>
+    <header class="main-header">
+      <ul class="header-items">
+        <li class="header__title">
+          <h1 class="app-name"><strong>KW</strong>Dashboard</h1>
+        </li>
+        <li class="header__notification">
+          <div class="notification--new"></div>
+          <img class="icon__notification" src="icons/icon-bell.svg" alt="notification">
+        </li>
+        <li class="header__user__image">
+          <img class="user__image" src="img/kwanwoojeong.jpg" alt="user image">
+        </li>
+        <li class="header__user__name">
+          <p class="user__name">Kwanwoo Jeong</p>
+        </li>
+      </ul>
     </header>
 
     <!-- navigation with SVG icons -->
-    <nav>
-      <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Members</a></li>
-        <li><a href="#">Visits</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>
+    <nav class="nav">
+      <li class="nav__item--active">
+        <a href="#">
+          <img class="icon__nav" src="icons/icon-dashboard.svg" alt="dashboard">
+          <span class="srt">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#">
+          <img class="icon__nav" src="icons/icon-members.svg" alt="members">
+          <span class="srt">Members</span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#">
+          <img class="icon__nav" src="icons/icon-visits.svg" alt="visits">
+          <span class="srt">Visits</span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#">
+          <img class="icon__nav" src="icons/icon-settings.svg" alt="settings">
+          <span class="srt">Settings</span>
+        </a>
+      </li>
     </nav>
 
     <!-- main contents -->

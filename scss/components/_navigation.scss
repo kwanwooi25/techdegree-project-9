@@ -1,0 +1,15 @@
+.nav {
+  list-style: none;
+  background-color: $color-primary--dark;
+  height: 100vh;
+  float: left;
+
+  @include e(item) {
+    @extend %nav-link;
+
+    @include m(active) {
+      @extend %nav-link;
+      border-left-color: rgba($color-secondary, 1);
+    }
+  }
+}

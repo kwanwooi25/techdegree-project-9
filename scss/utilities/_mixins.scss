@@ -1,0 +1,74 @@
+// BEM selectors
+@mixin e($element) {
+	&__#{$element} {
+    @content;
+  }
+}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Flexbox settings for multiple browser
+@mixin flexbox {
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-alignment($horizontal:'center', $vertical:'center') {
+	@if $horizontal == "center" {
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+	} @else if $horizontal == "start" {
+		-webkit-box-pack: start;
+		-moz-box-pack: start;
+		-ms-flex-pack: start;
+		-webkit-justify-content: flex-start;
+		justify-content: flex-start;
+	} @else if $horizontal == "end" {
+		-webkit-box-pack: end;
+		-moz-box-pack: end;
+		-ms-flex-pack: end;
+		-webkit-justify-content: flex-end;
+		justify-content: flex-end;
+	} @else if $horizontal == "space-between" {
+		-webkit-box-pack: justify;
+		-moz-box-pack: justify;
+		-ms-flex-pack: justify;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+	} @else {
+		@error "'#{$horizontal}' is not valid. "
+	};
+
+	@if $vertical == "baseline" {
+		-ms-flex-item-align: baseline;
+		-webkit-align-self: baseline;
+		align-self: baseline;
+	} @else if $vertical == "center" {
+		-ms-flex-item-align: center;
+		-webkit-align-self: center;
+		align-self: center;
+	} @else if $vertical == "end" {
+		-ms-flex-item-align: end;
+		-webkit-align-self: flex-end;
+		align-self: flex-end;
+	} @else if $vertical == "start" {
+		-ms-flex-item-align: start;
+		-webkit-align-self: flex-start;
+		align-self: flex-start;
+	} @else if $vertical == "stretch" {
+		-ms-flex-item-align: stretch;
+		-webkit-align-self: stretch;
+		align-self: stretch;
+	} @else {
+		@error "'#{$vertical}' is not valid. "
+	};
+}

@@ -1,0 +1,43 @@
+// Fonts & text
+
+$font-url--google : "https://fonts.googleapis.com/css?family=Raleway:300,400,600,800";
+
+$font-weight--light   : 300;
+$font-weight--regular : 400;
+$font-weight--bold    : 600;
+$font-weight--xbold   : 800;
+
+$base__font-family : 'Raleway', sans-serif;
+$base__font-size : 16px;
+$base__font-weight: $font-weight--regular;
+$base__line-height : 1.7;
+
+// Colors
+
+$white : #fff;
+$black : #384047;
+$grey  : #B1B2B1;
+
+$grey--xlight  : lighten($grey, 20%);
+$grey--light   : lighten($grey, 10%);
+$grey--dark    : darken($grey, 10%);
+$grey--xdark   : darken($grey, 20%);
+
+$color-primary        : #6187BF;
+$color-primary--light : #98BDFF;
+$color-primary--dark  : #3E597F;
+$color-secondary      : #7EC98D;
+$color-tertiary       : #71B7BE;
+
+// Grid
+
+$grid-col-width    : 65px;
+$grid-gutter-width : 20px;
+$grid-col-count    : 12;
+$grid-cont-max-w   : 1024px;
+
+// Breakpoints
+
+$break-sm : 1px;
+$break-md : 768px;
+$break-lg : 1024px;

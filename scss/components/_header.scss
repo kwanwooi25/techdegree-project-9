@@ -1,0 +1,64 @@
+.main-header {
+  background-color: $color-primary;
+  height: auto;
+  @include flexbox;
+}
+
+.header {
+  &-items {
+    width: 100%;
+    margin: 0;
+    padding: .5rem 1rem;
+    list-style: none;
+    @include flexbox;
+  }
+
+  @include e(title) {
+    flex: 1;
+    padding: .5rem;
+  }
+
+  @include e(notification) {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  @include e(user) {
+    @include e(image) {
+      padding: 0 1rem;
+      border-left: 1px solid rgba($white, .5);
+    }
+    @include e(name) {
+      color: $white;
+    }
+  }
+}
+
+.app-name {
+  margin: 0;
+  padding: 0;
+  color: $white;
+  font-weight: $font-weight--regular;
+}
+
+.notification--new {
+  width: .5rem;
+  height: .5rem;
+  background-color: $color-secondary;
+  border-radius: 50%;
+  position: relative;
+  top: 0rem;
+  right: -1.5rem;
+}
+
+[class^=header__] {
+  @include flex-alignment(center, center);
+}
+
+.user {
+  @include e(image) {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+  }
+}

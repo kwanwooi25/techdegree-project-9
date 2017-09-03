@@ -1,0 +1,9 @@
+.icon {
+  @include e(notification) {
+    @extend %icon;
+  }
+
+  @include e(nav) {
+    @extend %icon;
+  }
+}
