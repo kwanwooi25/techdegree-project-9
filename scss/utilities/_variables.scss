@@ -8,9 +8,9 @@ $font-weight--bold    : 600;
 $font-weight--xbold   : 800;
 
 $base__font-family : 'Raleway', sans-serif;
-$base__font-size : 16px;
+$base__font-size : 14px;
 $base__font-weight: $font-weight--regular;
-$base__line-height : 1.7;
+$base__line-height : 1.5;
 
 // Colors
 
@@ -18,6 +18,7 @@ $white : #fff;
 $black : #384047;
 $grey  : #B1B2B1;
 
+$grey--xxlight : lighten($grey, 25%);
 $grey--xlight  : lighten($grey, 20%);
 $grey--light   : lighten($grey, 10%);
 $grey--dark    : darken($grey, 10%);
@@ -29,10 +30,18 @@ $color-primary--dark  : #3E597F;
 $color-secondary      : #7EC98D;
 $color-tertiary       : #71B7BE;
 
+$ui-colors : (
+  default  : $color-secondary,
+  success  : #78C58F,
+  error    : #FF8F93,
+  warning  : #FF9C7E,
+  info     : rgba(189, 156, 255, 1)
+);
+
 // Grid
 
 $grid-col-width    : 65px;
-$grid-gutter-width : 20px;
+$grid-gutter-width : 15px;
 $grid-col-count    : 12;
 $grid-cont-max-w   : 1024px;
 

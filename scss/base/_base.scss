@@ -6,4 +6,22 @@
 
 body {
   font-family: $base__font-family;
+  font-size: $base__font-size;
+  font-weight: $base__font-weight;
+  line-height: $base__line-height;
+  color: $grey--xdark;
+}
+
+main {
+  position: relative;
+  margin-top: 8.6rem;
+
+  @include mq(md) {
+    margin-left: 5.2rem;
+    margin-top: 4.5rem;
+  }
+}
+
+canvas {
+  @extend %shadow;
 }

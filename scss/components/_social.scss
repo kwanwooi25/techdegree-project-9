@@ -1,0 +1,42 @@
+.social {
+  background-color: rgba($grey--xxlight,.5);
+  padding: .5em 1em;
+  margin: .5em;
+  border-radius: .5em;
+  border: 1px solid $grey--xlight;
+  @extend %shadow;
+  
+  @include flexbox;
+  @include flex-alignment(space-between, center);
+
+  // div that wraps social icons
+  @include e(icon-wrapper) {
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    background-color: $color-primary;
+    border-radius: 50%;
+    @include flexbox;
+    @include flex-alignment(center, center);
+  }
+
+  // div that wraps title & stats of social network
+  @include e(text) {
+    flex: 1;
+    margin-left: 1em;
+  }
+
+  // title of social network
+  &-title {
+    font-size: 1.2rem;
+    font-weight: $font-weight--bold;
+    margin: 0;
+    color: $color-primary;
+  }
+
+  // stats of social network
+  &-stats {
+    font-size: 2.4rem;
+    font-weight: $font-weight--light;
+    margin: -.3em 0 0;
+  }
+}

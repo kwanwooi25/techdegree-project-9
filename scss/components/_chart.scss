@@ -1,0 +1,43 @@
+.chart__traffic__title {
+  @include flexbox;
+  @include flex-alignment(space-between, center);
+}
+
+.chart-traffic-list {
+  list-style: none;
+  padding: 0;
+  display: none;
+
+  @include mq(md) {
+    @include flexbox;
+    @include flex-alignment(end, center);
+  }
+}
+
+.chart-traffic-list-select {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.chart-traffic-list li {
+  margin: .5em 0;
+}
+
+.chart-traffic-list a {
+  color: $grey;
+  font-weight: $font-weight--bold;
+  text-decoration: none;
+  padding: .5em 1em;
+  margin: 0 .25em;
+  vertical-align: middle;
+
+  &[active],
+  &:hover {
+    background-color: $color-secondary;
+    color: $white;
+    border-radius: 1em;
+    cursor: pointer;
+    @extend %shadow;
+  }
+}

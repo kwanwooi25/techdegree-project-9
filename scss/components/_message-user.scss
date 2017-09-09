@@ -1,0 +1,33 @@
+#user__name,
+#user__message{
+  @extend %input;
+  width: 100%;
+  max-width: 100%;
+  font-size: .9rem;
+  margin: .75em 0;
+
+  &.invalid {
+    &::placeholder {
+      color: map-get($ui-colors, 'error');
+    }
+    color: map-get($ui-colors, 'error');
+    border-color: map-get($ui-colors, 'error');
+  }
+}
+
+#user__message {
+  resize: none;
+  height: 4.75em;
+}
+
+#user__submit {
+  width: 100%;
+  @extend %btn;
+}
+
+#errorMessage {
+  margin: 0;
+  font-size: .8em;
+  font-weight: $font-weight--bold;
+  color: map-get($ui-colors, 'error');
+}

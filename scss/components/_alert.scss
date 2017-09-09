@@ -1,0 +1,28 @@
+.alert {
+  @each $theme, $color in $ui-colors {
+    @include m(#{$theme}) {
+      @extend %alert;
+      background-color : $color;
+      @include flexbox;
+      @include flex-alignment(space-between, center);
+    }
+  }
+
+  @include e(heading) {
+    font-weight: $font-weight--bold;
+    padding-right: 1em;
+  }
+  
+  @include e(message) {
+    flex: 1;
+  }
+
+  @include e(close) {
+    font-size: 1rem;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

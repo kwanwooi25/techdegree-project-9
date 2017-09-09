@@ -1,7 +1,15 @@
 .main-header {
   background-color: $color-primary;
-  height: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  @extend %clearfix;
   @include flexbox;
+
+  @include mq(md) {
+    box-shadow: 84px 3px 10px rgba($grey--xdark, .5);
+  }
 }
 
 .header {
@@ -11,11 +19,16 @@
     padding: .5rem 1rem;
     list-style: none;
     @include flexbox;
+    @include flex-alignment(center, center);
   }
 
   @include e(title) {
     flex: 1;
     padding: .5rem;
+
+    & a {
+      text-decoration: none;
+    }
   }
 
   @include e(notification) {
@@ -30,6 +43,11 @@
     }
     @include e(name) {
       color: $white;
+      display: none; // hide on small screens
+
+      @include mq(md) {
+        display: inline-block;
+      }
     }
   }
 }
@@ -39,20 +57,6 @@
   padding: 0;
   color: $white;
   font-weight: $font-weight--regular;
-}
-
-.notification--new {
-  width: .5rem;
-  height: .5rem;
-  background-color: $color-secondary;
-  border-radius: 50%;
-  position: relative;
-  top: 0rem;
-  right: -1.5rem;
-}
-
-[class^=header__] {
-  @include flex-alignment(center, center);
 }
 
 .user {

@@ -1,15 +1,47 @@
 .nav {
   list-style: none;
   background-color: $color-primary--dark;
-  height: 100vh;
-  float: left;
+  position: fixed;
+  top: 4.5rem;
+  width: 100%;
+  padding: 0 3rem;
+  box-shadow: 3px 1px 10px rgba($grey--xdark, .5);
+  z-index: 10;
+  @include flexbox;
+  @include flex-alignment(space-between, center);
+
+  @include mq(md) {
+    width: auto;
+    display: block;
+    padding: 0;
+    top: 4.5rem;
+    height: 100%;
+    box-shadow: 3px 1px 10px rgba($grey--xdark, .5);
+  }
 
   @include e(item) {
     @extend %nav-link;
 
+    @include mq(md) {
+      border-bottom: none;
+    }
+    
+    &:hover {
+      border-bottom-color: rgba($color-secondary, 1);
+
+      @include mq(md) {
+        border-left-color: rgba($color-secondary, 1);
+      }
+    }
+
     @include m(active) {
       @extend %nav-link;
-      border-left-color: rgba($color-secondary, 1);
+      border-bottom-color: rgba($color-secondary, 1);
+
+      @include mq(md) {
+        border-bottom: none;
+        border-left-color: rgba($color-secondary, 1);
+      }
     }
   }
 }

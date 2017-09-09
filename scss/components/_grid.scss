@@ -1,0 +1,27 @@
+.grid {
+  @include e(row) {
+    border-bottom: 1px solid $grey--xlight;
+    width: 100%;
+    @extend %clearfix;
+
+    // to remove 'alert' div and the last row's bottom border
+    &:first-child,
+    &:last-child {
+      border: none;
+    }
+
+    @include mq(md) {
+      @include flexbox;
+    }
+  }
+
+  @include e(col) {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $grey--xlight;
+
+    @include mq(md) {
+      @include grid-columns;
+    }
+  }
+}

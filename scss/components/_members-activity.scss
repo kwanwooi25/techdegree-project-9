@@ -1,0 +1,83 @@
+#new-members-list,
+#recent-activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.new-member,
+.recent-activity {
+  padding: .5em;
+  border-bottom: 1px solid $grey--xlight;
+  @include flexbox;
+  @include flex-alignment(space-between, center);
+
+  @include mq(md) {
+    height: 6em;
+  }
+
+  &:last-child {
+    border: none;
+  }
+
+  @include e(image) {
+    border-radius: 50%;
+    width: 2rem;
+    @include mq(md) {
+      width: 3rem;
+    }
+  }
+
+  @include e(info) {
+    flex: 1;
+    padding-left: 1rem;
+  }
+}
+
+.new-member {
+  overflow: hidden;
+
+  @include e(name) {
+    margin: 0;
+  }
+
+  @include e(email) {
+    color: $color-primary;
+    text-decoration: none;
+    font-size: .8rem;
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  @include e(date) {
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.recent-activity {
+
+  @include e(activity) {
+    margin: 0;
+  }
+
+  @include e(time) {
+    margin: 0;
+    font-size: .7rem;
+  }
+
+  // draw arrow
+  @include e(arrow) {
+    border: solid $color-primary;
+    border-width: 0 3px 3px 0;
+    padding: .5em;
+    margin-left: 2em;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+
+    &:hover {
+      opacity: .6;
+      cursor: pointer;
+    }
+  }
+}

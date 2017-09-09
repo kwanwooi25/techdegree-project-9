@@ -1,0 +1,71 @@
+.header__page {
+  height: 3.5rem;
+  @include flexbox;
+  @include flex-alignment(space-between, center);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: $font-weight--bold;
+  margin: 0;
+  padding: .5rem 1rem;
+  background-color: $white;
+  display: none;
+
+  @include mq(md) {
+    display: inline-block;
+  }
+}
+
+.page-title-sm {
+  font-size: 1.5rem;
+  font-weight: $font-weight--bold;
+  margin: 0;
+  padding: .5rem 1rem;
+  box-shadow: 0px 10px 10px -10px rgba($grey--dark, .5);
+  background-color: $white;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.search {
+  flex: 1;
+  height: inherit;
+  border-bottom: 1px solid $grey--xlight;
+  box-shadow: inset 0px 0px 10px rgba($grey--xdark, .3);
+  background-color: $grey--xxlight;
+  padding-right: 3em;
+  @include flexbox;
+  @include flex-alignment(end, center);
+}
+
+#input__search {
+  width: 16rem;
+  height: 2em;
+  padding-right: 2.5em;
+  font-size: 1rem;
+  @extend %input;
+
+  @include mq(md) {
+    width: 20rem;
+  }
+}
+
+#btn__search {
+  margin-left: -2.5em;
+  width: 0em;
+  border: none;
+  background: none;
+}
+
+#icon__search {
+  width: 1.25em;
+  height: 2em;
+  fill: $color-primary;
+  &:hover {
+    cursor: pointer;
+    opacity: .7;
+  }
+}

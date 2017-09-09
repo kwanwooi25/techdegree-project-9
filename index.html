@@ -7,15 +7,45 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
     <!-- header with App name, notification icon & user avatar -->
     <header class="main-header">
       <ul class="header-items">
         <li class="header__title">
-          <h1 class="app-name"><strong>KW</strong>Dashboard</h1>
+          <a href="#">
+            <h1 class="app-name"><strong>KW</strong>Dashboard</h1>
+          </a>
         </li>
         <li class="header__notification">
-          <div class="notification--new"></div>
-          <img class="icon__notification" src="icons/icon-bell.svg" alt="notification">
+          <span class="notification__new"></span>
+          <a href="#">
+            <svg class="icon__notification" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            	<g>
+            		<path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+            			c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+            	</g>
+            </svg>
+          </a>
+          <!-- new notifications list (visually hidden by default) -->
+          <ul id="notification__list" style="display: none;">
+            <li class="notification__item">
+              <p class="notification__message">This is the first notification. Click 'X' button on the right to remove this!</p>
+              <a class="notification__remove">✖</a>
+            </li>
+            <li class="notification__item">
+              <p class="notification__message">Welcome! Have a look through my awesome project!!</p>
+              <a class="notification__remove">✖</a>
+            </li>
+            <li class="notification__item">
+              <p class="notification__message">What's in your mind?</p>
+              <a class="notification__remove">✖</a>
+            </li>
+            <li class="notification__item">
+              <p class="notification__message">Everything's difficult until it gets easy :)</p>
+              <a class="notification__remove">✖</a>
+            </li>
+          </ul>
         </li>
         <li class="header__user__image">
           <img class="user__image" src="img/kwanwoojeong.jpg" alt="user image">
@@ -30,25 +60,69 @@
     <nav class="nav">
       <li class="nav__item--active">
         <a href="#">
-          <img class="icon__nav" src="icons/icon-dashboard.svg" alt="dashboard">
+          <svg class="icon__nav--active" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          	<g>
+          		<path d="M25,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,16.7,23.3,18,25,18z M24,14h2v2h-2V14z M25,26
+          			c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C22,24.7,23.3,26,25,26z M24,22h2v2h-2V22z M17,26c1.7,0,3-1.3,3-3
+          			c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C14,24.7,15.3,26,17,26z M16,22h2v2h-2V22z M28,0H6C3.8,0,2,1.8,2,4v24c0,2.2,1.8,4,4,4h22
+          			c2.2,0,4-1.8,4-4V4C32,1.8,30.2,0,28,0z M30,28c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V8h26V28z M30,6H4V4c0-1.1,0.9-2,2-2h22
+          			c1.1,0,2,0.9,2,2V6z M17,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C14,16.7,15.3,18,17,18z M16,14h2v2h-2V14z M9,26
+          			c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3C6,24.7,7.3,26,9,26z M8,22h2v2H8V22z M9,18c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3
+          			c-1.7,0-3,1.3-3,3C6,16.7,7.3,18,9,18z M8,14h2v2H8V14z"/>
+          	</g>
+          </svg>
           <span class="srt">Dashboard</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#">
-          <img class="icon__nav" src="icons/icon-members.svg" alt="members">
+          <svg class="icon__nav" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          	<g>
+          		<path d="M18,16.4c1.3-1.7,2-3.9,2-6.4c0-5.5-4-10-9-10C6,0,2,4.5,2,10c0,2.4,0.8,4.6,2,6.4c-2.3,0.8-4,3-4,5.6v4
+          			c0,3.3,2.7,6,6,6h10c3.3,0,6-2.7,6-6v-4C22,19.4,20.3,17.2,18,16.4z M4,10c0-4.4,3.1-8,7-8c3.9,0,7,3.6,7,8s-3.1,8-7,8
+          			C7.1,18,4,14.4,4,10z M20,25.5c0,2.5-2.2,4.5-4.9,4.5H6.9C4.2,30,2,28,2,25.5v-3c0-2.1,1.6-3.9,3.8-4.4C7.2,19.3,9,20,11,20
+          			c2,0,3.8-0.7,5.2-1.9c2.2,0.5,3.8,2.2,3.8,4.4V25.5z M23,8h8c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1h-8c-0.6,0-1,0.4-1,1
+          			C22,7.6,22.4,8,23,8z M31,24h-6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1C32,24.4,31.6,24,31,24z M31,12h-8
+          			c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h8c0.6,0,1-0.4,1-1C32,12.4,31.6,12,31,12z M31,18h-6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h6
+          			c0.6,0,1-0.4,1-1C32,18.4,31.6,18,31,18z"/>
+          	</g>
+          </svg>
           <span class="srt">Members</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#">
-          <img class="icon__nav" src="icons/icon-visits.svg" alt="visits">
+          <svg class="icon__nav" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          	<g>
+          		<path d="M14,0h-2c-1.1,0-2,0.9-2,2v28c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V2C16,0.9,15.1,0,14,0z M14,29
+          			c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z M4,9H2c-1.1,0-2,0.9-2,2v19c0,1.1,0.9,2,2,2h2
+          			c1.1,0,2-0.9,2-2V11C6,9.9,5.1,9,4,9z M4,29c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V12c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z M24,16h-2
+          			c-1.1,0-2,0.9-2,2v12c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2V18C26,16.9,25.1,16,24,16z M24,29c0,0.6-0.4,1-1,1c-0.6,0-1-0.4-1-1V19
+          			c0-0.6,0.4-1,1-1c0.6,0,1,0.4,1,1V29z"/>
+          	</g>
+          </svg>
           <span class="srt">Visits</span>
         </a>
       </li>
       <li class="nav__item">
         <a href="#">
-          <img class="icon__nav" src="icons/icon-settings.svg" alt="settings">
+          <svg class="icon__nav" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          	<g>
+          		<path class="st0" d="M26,24H14.9c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h1.1
+          			c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26c0.6,0,1-0.4,1-1C27,24.4,26.6,24,26,24z M11,27.4c-1.3,0-2.4-1.1-2.4-2.4
+          			c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4C13.4,26.3,12.3,27.4,11,27.4z M26,8H14.9c-0.4-1.7-2-3-3.9-3C9.1,5,7.6,6.3,7.1,8H6
+          			C5.4,8,5,8.4,5,9c0,0.6,0.4,1,1,1h1.1c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26c0.6,0,1-0.4,1-1C27,8.4,26.6,8,26,8z M11,11.4
+          			c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4C13.4,10.3,12.3,11.4,11,11.4z M26,16h-2.1
+          			c-0.4-1.7-2-3-3.9-3c-1.9,0-3.4,1.3-3.9,3H6c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h10.1c0.4,1.7,2,3,3.9,3c1.9,0,3.4-1.3,3.9-3H26
+          			c0.6,0,1-0.4,1-1C27,16.4,26.6,16,26,16z M20,19.4c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4
+          			C22.4,18.3,21.3,19.4,20,19.4z M28,0H4C1.8,0,0,1.8,0,4v24c0,2.2,1.8,4,4,4h24c2.2,0,4-1.8,4-4V4C32,1.8,30.2,0,28,0z M30,28
+          			c0,1.1-0.9,2-2,2H4c-1.1,0-2-0.9-2-2V4c0-1.1,0.9-2,2-2h24c1.1,0,2,0.9,2,2V28z"/>
+          	</g>
+          </svg>
           <span class="srt">Settings</span>
         </a>
       </li>
@@ -56,50 +130,325 @@
 
     <!-- main contents -->
     <main>
+
+      <!-- page header section with search field -->
       <div class="header__page">
-        <h1 class="page-title"></h1>
-        <input class="input__search" type="text" name="" placeholder="Search">
-          <button class="btn__search" type="button" name="button"></button>
-        </input>
-      </div>
-      <div class="alert-message grid__col--12">
-        alert-message
-      </div>
-      <div class="chart__traffic grid__col--12">
-        traffic chart (line graph)
-      </div>
-      <div class="chart__daily-traffic grid__col--6">
-        daily traffic chart (bar chart)
-      </div>
-      <div class="chart__mobile-users grid__col--6">
-        mobile users chart (donut)
-      </div>
-      <div class="social-stats grid__col--12">
-        <div class="social__twitter grid__col--4">
-          social stats for twitter
-        </div>
-        <div class="social__facebook grid__col--4">
-          social stats for facebook
-        </div>
-        <div class="social__google grid__col--4">
-          social stats for google
+        <h1 class="page-title">Dashboard</h1>
+        <div class="search">
+          <input id="input__search" type="text" name="" placeholder="Search" onclick="placeholder=''" onblur="placeholder='Search'"/>
+          <button id="btn__search" type="button" name="button">
+            <svg version="1.1" id="icon__search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 485.2 485.2" style="enable-background:new 0 0 485.2 485.2;" xml:space="preserve">
+            <path d="M471.9,407.6L360.6,296.2C344,322,322,344,296.2,360.6l111.3,111.3c17.8,17.8,46.6,17.8,64.3,0
+              C489.7,454.1,489.7,425.3,471.9,407.6z"></path>
+            <path d="M363.9,182c0-100.5-81.5-182-182-182C81.5,0,0,81.5,0,182s81.5,182,182,182C282.4,363.9,363.9,282.4,363.9,182z M182,318.4
+              c-75.3,0-136.5-61.2-136.5-136.5S106.7,45.5,182,45.5c75.2,0,136.5,61.2,136.5,136.5S257.2,318.4,182,318.4z"></path>
+            <path d="M75.8,182h30.3c0-41.8,34-75.8,75.8-75.8V75.8C123.4,75.8,75.8,123.4,75.8,182z"></path>
+            </svg>
+          </button>
         </div>
       </div>
-      <div class="new-members grid__col--6">
-        new members
-      </div>
-      <div class="recent-activity grid__col--6">
-        recent activities
-      </div>
-      <div class="message-user grid__col--6">
-        message user (form)
-      </div>
-      <div class="settings grid__col--6">
-        settings (form)
+
+      <div class="wrapper__contents">
+
+        <!-- alert messages -->
+        <div class="grid__row">
+          <div class="alert--warning grid__col--12">
+            <span class="alert__heading">Alert</span>
+            <span class="alert__message">
+              This is Alert message! You can close this by clicking 'X' button on the right!
+            </span>
+            <a class="alert__close">✖</a>
+          </div>
+        </div>
+        <!-- /alert messages -->
+
+        <!-- title for small screens -->
+        <h1 class="page-title-sm">Dashboard</h1>
+
+        <!-- .chart__traffic -->
+        <div class="grid__row">
+          <div class="grid__col--12 chart__traffic">
+            <div class="chart__traffic__title">
+              <h2 class="component-title">Traffic</h2>
+              <ul class="chart-traffic-list">
+                <li><a id="chart-hourly">Hourly</a></li>
+                <li><a id="chart-daily">Daily</a></li>
+                <li><a id="chart-weekly" active>Weekly</a></li>
+                <li><a id="chart-monthly">Monthly</a></li>
+              </ul>
+              <select class="custom-select chart-traffic-list-select" name="chart-list">
+                <option value="chart-hourly">Hourly</option>
+                <option value="chart-daily">Daily</option>
+                <option value="chart-weekly" selected>Weekly</option>
+                <option value="chart-monthly">Monthly</option>
+              </select>
+            </div>
+            <canvas id="chart-traffic" width="90%" height="40"></canvas>
+          </div>
+        </div>
+        <!-- /.chart__traffic -->
+
+        <!-- .chart__daily-traffic -->
+        <div class="grid__row">
+          <div class="grid__col--6 chart__daily-traffic">
+            <h2 class="component-title">Daily Traffic</h2>
+            <canvas id="chart-dailytraffic" width="90%" height="70"></canvas>
+          </div>
+          <div class="grid__col--6 chart__mobile-users">
+            <h2 class="component-title">Mobile Users</h2>
+            <canvas id="chart-mobileusers" width="90%" height="70"></canvas>
+          </div>
+        </div>
+        <!-- /.chart__daily-traffic -->
+
+        <!-- .social -->
+        <h2 class="component-title">Social Stats</h2>
+        <div class="grid__row">
+          <div class="grid__col--4 social">
+            <div class="social__icon-wrapper">
+              <svg version="1.1" id="icon__social__twitter" class="icon__social" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                <path d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+                	c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
+                	c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+                	c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
+                	c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"></path>
+              </svg>
+            </div>
+            <div class="social__text">
+              <h2 class="social-title">Twitter</h2>
+              <p class="social-stats">10,345</p>
+            </div>
+          </div>
+          <div class="grid__col--4 social">
+            <div class="social__icon-wrapper">
+              <svg enable-background="new 0 0 56.693 56.693" height="56.693px" id="icon__social__facebook" class="icon__social" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path>
+              </svg>
+            </div>
+            <div class="social__text">
+              <h2 class="social-title">Facebook</h2>
+              <p class="social-stats">8,739</p>
+            </div>
+          </div>
+          <div class="grid__col--4 social">
+            <div class="social__icon-wrapper">
+              <svg version="1.1" id="icon__social__google" class="icon__social" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+              <path d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+              	c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
+              	c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
+              	c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
+              	c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
+              	c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
+              	c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
+              	c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
+              	c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
+              	c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
+              	c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
+              	c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
+              	c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
+              	c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
+              	c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
+              	h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"></path>
+              </svg>
+            </div>
+            <div class="social__text">
+              <h2 class="social-title">Google+</h2>
+              <p class="social-stats">2,530</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.social -->
+
+        <div class="grid__row">
+          <!-- .new-members -->
+          <div class="grid__col--6">
+            <h2 class="component-title">New Members</h2>
+            <ul id="new-members-list">
+              <!-- ****************************************
+              list will be updated by JS
+              ***************************************** -->
+            </ul>
+          </div>
+          <!-- /.new-members -->
+          <!-- .recent-activity -->
+          <div class="grid__col--6">
+            <h2 class="component-title">Recent Activity</h2>
+            <ul id="recent-activity-list">
+              <!-- ****************************************
+              list will be updated by JS
+              ***************************************** -->
+            </ul>
+          </div>
+          <!-- /.recent-activity -->
+        </div>
+
+        <div class="grid__row">
+          <!-- .message-user -->
+          <div class="grid__col--6">
+            <h2 class="component-title">Message User</h2>
+            <form id="form__messageUser" action="index.html" method="post">
+              <input id="user__name" name="user__name" list="user__list" type="text" placeholder="Search for User" onclick="placeholder=''" onblur="placeholder='Search for User'">
+              <datalist id="user__list">
+                <!-- ****************************************
+                list will be updated by JS
+                ***************************************** -->
+              </datalist>
+              <textarea id="user__message" name="user__message" placeholder="Message for User" onclick="placeholder=''" onblur="placeholder='Message for User'"></textarea>
+              <button id="user__submit">SEND</button>
+            </form>
+          </div>
+          <!-- /.message-user -->
+          <!-- .settings -->
+          <div class="grid__col--6">
+            <h2 class="component-title">Settings</h2>
+            <div class="settings_toggle">
+              <span>Send Email Notifications</span>
+              <label class="switch">
+                <input id="settings__emailNotification" class="checkbox" type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="settings_toggle">
+              <span>Set Profile to Public</span>
+              <label class="switch">
+                <input id="settings__profileToPublic" class="checkbox" type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <select id="settings__timeZone" class="custom-select timezone">
+            	<option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">(GMT-12:00) International Date Line West</option>
+            	<option timeZoneId="2" gmtAdjustment="GMT-11:00" useDaylightTime="0" value="-11">(GMT-11:00) Midway Island, Samoa</option>
+            	<option timeZoneId="3" gmtAdjustment="GMT-10:00" useDaylightTime="0" value="-10">(GMT-10:00) Hawaii</option>
+            	<option timeZoneId="4" gmtAdjustment="GMT-09:00" useDaylightTime="1" value="-9">(GMT-09:00) Alaska</option>
+            	<option timeZoneId="5" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+            	<option timeZoneId="6" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Tijuana, Baja California</option>
+            	<option timeZoneId="7" gmtAdjustment="GMT-07:00" useDaylightTime="0" value="-7">(GMT-07:00) Arizona</option>
+            	<option timeZoneId="8" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+            	<option timeZoneId="9" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+            	<option timeZoneId="10" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">(GMT-06:00) Central America</option>
+            	<option timeZoneId="11" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+            	<option timeZoneId="12" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+            	<option timeZoneId="13" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">(GMT-06:00) Saskatchewan</option>
+            	<option timeZoneId="14" gmtAdjustment="GMT-05:00" useDaylightTime="0" value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+            	<option timeZoneId="15" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+            	<option timeZoneId="16" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">(GMT-05:00) Indiana (East)</option>
+            	<option timeZoneId="17" gmtAdjustment="GMT-04:00" useDaylightTime="1" value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
+            	<option timeZoneId="18" gmtAdjustment="GMT-04:00" useDaylightTime="0" value="-4">(GMT-04:00) Caracas, La Paz</option>
+            	<option timeZoneId="19" gmtAdjustment="GMT-04:00" useDaylightTime="0" value="-4">(GMT-04:00) Manaus</option>
+            	<option timeZoneId="20" gmtAdjustment="GMT-04:00" useDaylightTime="1" value="-4">(GMT-04:00) Santiago</option>
+            	<option timeZoneId="21" gmtAdjustment="GMT-03:30" useDaylightTime="1" value="-3.5">(GMT-03:30) Newfoundland</option>
+            	<option timeZoneId="22" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">(GMT-03:00) Brasilia</option>
+            	<option timeZoneId="23" gmtAdjustment="GMT-03:00" useDaylightTime="0" value="-3">(GMT-03:00) Buenos Aires, Georgetown</option>
+            	<option timeZoneId="24" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">(GMT-03:00) Greenland</option>
+            	<option timeZoneId="25" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">(GMT-03:00) Montevideo</option>
+            	<option timeZoneId="26" gmtAdjustment="GMT-02:00" useDaylightTime="1" value="-2">(GMT-02:00) Mid-Atlantic</option>
+            	<option timeZoneId="27" gmtAdjustment="GMT-01:00" useDaylightTime="0" value="-1">(GMT-01:00) Cape Verde Is.</option>
+            	<option timeZoneId="28" gmtAdjustment="GMT-01:00" useDaylightTime="1" value="-1">(GMT-01:00) Azores</option>
+            	<option timeZoneId="29" gmtAdjustment="GMT+00:00" useDaylightTime="0" value="0">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+            	<option timeZoneId="30" gmtAdjustment="GMT+00:00" useDaylightTime="1" value="0">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+            	<option timeZoneId="31" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+            	<option timeZoneId="32" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+            	<option timeZoneId="33" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+            	<option timeZoneId="34" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+            	<option timeZoneId="35" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) West Central Africa</option>
+            	<option timeZoneId="36" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Amman</option>
+            	<option timeZoneId="37" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+            	<option timeZoneId="38" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Beirut</option>
+            	<option timeZoneId="39" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Cairo</option>
+            	<option timeZoneId="40" gmtAdjustment="GMT+02:00" useDaylightTime="0" value="2">(GMT+02:00) Harare, Pretoria</option>
+            	<option timeZoneId="41" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+            	<option timeZoneId="42" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Jerusalem</option>
+            	<option timeZoneId="43" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Minsk</option>
+            	<option timeZoneId="44" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Windhoek</option>
+            	<option timeZoneId="45" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+            	<option timeZoneId="46" gmtAdjustment="GMT+03:00" useDaylightTime="1" value="3">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+            	<option timeZoneId="47" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">(GMT+03:00) Nairobi</option>
+            	<option timeZoneId="48" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">(GMT+03:00) Tbilisi</option>
+            	<option timeZoneId="49" gmtAdjustment="GMT+03:30" useDaylightTime="1" value="3.5">(GMT+03:30) Tehran</option>
+            	<option timeZoneId="50" gmtAdjustment="GMT+04:00" useDaylightTime="0" value="4">(GMT+04:00) Abu Dhabi, Muscat</option>
+            	<option timeZoneId="51" gmtAdjustment="GMT+04:00" useDaylightTime="1" value="4">(GMT+04:00) Baku</option>
+            	<option timeZoneId="52" gmtAdjustment="GMT+04:00" useDaylightTime="1" value="4">(GMT+04:00) Yerevan</option>
+            	<option timeZoneId="53" gmtAdjustment="GMT+04:30" useDaylightTime="0" value="4.5">(GMT+04:30) Kabul</option>
+            	<option timeZoneId="54" gmtAdjustment="GMT+05:00" useDaylightTime="1" value="5">(GMT+05:00) Yekaterinburg</option>
+            	<option timeZoneId="55" gmtAdjustment="GMT+05:00" useDaylightTime="0" value="5">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+            	<option timeZoneId="56" gmtAdjustment="GMT+05:30" useDaylightTime="0" value="5.5">(GMT+05:30) Sri Jayawardenapura</option>
+            	<option timeZoneId="57" gmtAdjustment="GMT+05:30" useDaylightTime="0" value="5.5">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+            	<option timeZoneId="58" gmtAdjustment="GMT+05:45" useDaylightTime="0" value="5.75">(GMT+05:45) Kathmandu</option>
+            	<option timeZoneId="59" gmtAdjustment="GMT+06:00" useDaylightTime="1" value="6">(GMT+06:00) Almaty, Novosibirsk</option>
+            	<option timeZoneId="60" gmtAdjustment="GMT+06:00" useDaylightTime="0" value="6">(GMT+06:00) Astana, Dhaka</option>
+            	<option timeZoneId="61" gmtAdjustment="GMT+06:30" useDaylightTime="0" value="6.5">(GMT+06:30) Yangon (Rangoon)</option>
+            	<option timeZoneId="62" gmtAdjustment="GMT+07:00" useDaylightTime="0" value="7">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+            	<option timeZoneId="63" gmtAdjustment="GMT+07:00" useDaylightTime="1" value="7">(GMT+07:00) Krasnoyarsk</option>
+            	<option timeZoneId="64" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+            	<option timeZoneId="65" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Kuala Lumpur, Singapore</option>
+            	<option timeZoneId="66" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+            	<option timeZoneId="67" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Perth</option>
+            	<option timeZoneId="68" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Taipei</option>
+            	<option timeZoneId="69" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+            	<option timeZoneId="70" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">(GMT+09:00) Seoul</option>
+            	<option timeZoneId="71" gmtAdjustment="GMT+09:00" useDaylightTime="1" value="9">(GMT+09:00) Yakutsk</option>
+            	<option timeZoneId="72" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">(GMT+09:30) Adelaide</option>
+            	<option timeZoneId="73" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">(GMT+09:30) Darwin</option>
+            	<option timeZoneId="74" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">(GMT+10:00) Brisbane</option>
+            	<option timeZoneId="75" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+            	<option timeZoneId="76" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Hobart</option>
+            	<option timeZoneId="77" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">(GMT+10:00) Guam, Port Moresby</option>
+            	<option timeZoneId="78" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Vladivostok</option>
+            	<option timeZoneId="79" gmtAdjustment="GMT+11:00" useDaylightTime="1" value="11">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+            	<option timeZoneId="80" gmtAdjustment="GMT+12:00" useDaylightTime="1" value="12">(GMT+12:00) Auckland, Wellington</option>
+            	<option timeZoneId="81" gmtAdjustment="GMT+12:00" useDaylightTime="0" value="12">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+            	<option timeZoneId="82" gmtAdjustment="GMT+13:00" useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa</option>
+            </select>
+            <div class="btn__list">
+              <button id="btn__save" type="submit" name="submit">SAVE</button>
+              <button id="btn__cancel" type="submit" name="submit">CANCEL</button>
+            </div>
+          </div>
+          <!-- /.settings -->
+        </div>
+
+        <!-- modal for success message -->
+        <div id="modal" class="modal">
+          <div class="modal__wrapper">
+            <!-- modal for message user -->
+            <div id="modal__messageUser" class="modal__content">
+              <h3 class="modal__header">Success!</h3>
+              <p class="modal__message">Your message has been sent.</p>
+              <div class="modal__sentMessage">
+                <p id="user__name__modal" class="modal__sentMessage__to"></p>
+                <p id="user__message__modal" class="modal__sentMessage__message"></p>
+              </div>
+            </div>
+            <!-- modal for save settings -->
+            <div id="modal__saveSettings" class="modal__content">
+              <h3 class="modal__header">Saved!</h3>
+              <p class="modal__message">Saved your settings!</p>
+            </div>
+            <!-- modal close button -->
+            <button id="modal__close" class="modal__button" type="button" name="button">OK</button>
+          </div>
+        </div>
+        <!-- /.modal for success message -->
+
       </div>
     </main>
 
     <!-- footer -->
     <footer></footer>
+
+    <!-- scripts -->
+    <!-- external plugins -->
+    <script type="text/javascript" src="js/plugins/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/plugins/chart.min.js"></script>
+    <!-- own javascript -->
+    <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/notification.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/charts.js"></script>
+    <script type="text/javascript" src="js/members-activity.js"></script>
+    <script type="text/javascript" src="js/message-settings.js"></script>
   </body>
 </html>
