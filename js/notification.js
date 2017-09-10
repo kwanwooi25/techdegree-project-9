@@ -37,9 +37,9 @@ notificationIcon.addEventListener('click', function() {
 
 // Hide notificationList on click event outside of the list
 document.addEventListener('click', function(e) {
-  if (!notificationList.contains(e.target)
-    && e.target.classList[0] !== 'icon__notification'
-    && e.target.classList[0] !== 'notification__remove') {
+  if (!notificationList.contains(e.target) &&
+      e.target.classList[0] !== 'icon__notification' &&
+      e.target.classList[0] !== 'notification__remove') {
     notificationList.style.display = 'none';
   }
 });

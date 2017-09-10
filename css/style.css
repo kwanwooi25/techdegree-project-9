@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,800");
 #input__search, #user__name,
-#user__message, #user__submit, #btn__save, #btn__cancel, .modal__button, canvas, #notification__list, .custom-select, .slider, .chart-traffic-list a[active], .chart-traffic-list a:hover, .social, #autocomplete__list {
+#user__message, #user__submit, #btn__save, #btn__cancel, .modal__button, canvas, #notification__list, .custom-select, .slider, .chart-traffic-list a.active, .chart-traffic-list a:hover, .social, #autocomplete__list {
   box-shadow: 1px 3px 10px rgba(126, 127, 126, 0.3); }
   #input__search:focus, #user__name:focus,
-  #user__message:focus, #user__submit:focus, #btn__save:focus, #btn__cancel:focus, .modal__button:focus, canvas:focus, #notification__list:focus, .custom-select:focus, .slider:focus, .chart-traffic-list a[active]:focus, .chart-traffic-list a:focus:hover, .social:focus, #autocomplete__list:focus {
+  #user__message:focus, #user__submit:focus, #btn__save:focus, #btn__cancel:focus, .modal__button:focus, canvas:focus, #notification__list:focus, .custom-select:focus, .slider:focus, .chart-traffic-list a.active:focus, .chart-traffic-list a:focus:hover, .social:focus, #autocomplete__list:focus {
     box-shadow: 1px 5px 10px rgba(126, 127, 126, 0.4); }
 
 .nav__item, .nav__item--active {
@@ -648,6 +648,7 @@ main {
   top: 4.5rem;
   width: 100%;
   padding: 0 3rem;
+  margin: 0;
   box-shadow: 3px 1px 10px rgba(126, 127, 126, 0.5);
   z-index: 10;
   display: -webkit-box;
@@ -1055,7 +1056,7 @@ main {
   padding: .5em 1em;
   margin: 0 .25em;
   vertical-align: middle; }
-  .chart-traffic-list a[active], .chart-traffic-list a:hover {
+  .chart-traffic-list a.active, .chart-traffic-list a:hover {
     background-color: #7EC98D;
     color: #fff;
     border-radius: 1em;

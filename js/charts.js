@@ -50,7 +50,7 @@ function updateChart(labels, data) {
       }
     }
   });
-};
+}
 
 updateChart(weeklyLabels, weeklyData);
 
@@ -71,15 +71,15 @@ chartTrafficListSelect.addEventListener('change', function(e) {
 chartTrafficList.addEventListener('click', function(e) {
   var chartTrafficLists = document.querySelectorAll('.chart-traffic-list li a');
 
-  if  (e.target.id === 'chart-hourly'
-    || e.target.id === 'chart-daily'
-    || e.target.id === 'chart-weekly'
-    || e.target.id === 'chart-monthly') {
-    for (i = 0 ; i < chartTrafficLists.length ; i++) {
-      chartTrafficLists[i].removeAttribute('active');
+  if  (e.target.id === 'chart-hourly' ||
+       e.target.id === 'chart-daily'  ||
+       e.target.id === 'chart-weekly' ||
+       e.target.id === 'chart-monthly') {
+    for (var i = 0 ; i < chartTrafficLists.length ; i++) {
+      chartTrafficLists[i].removeAttribute('class');
     }
   }
-  e.target.setAttribute('active','');
+  e.target.setAttribute('class','active');
 
   if (e.target.id === 'chart-hourly') {
     updateChart(hourlyLabels, hourlyData);

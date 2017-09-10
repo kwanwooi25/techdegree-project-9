@@ -19,13 +19,10 @@
 =============================================================== */
 
 // for autocomplete user name
-var datalist = document.getElementById('user__list');
 var userList = [];
 var autocompleteList = document.getElementById('autocomplete__list');
 
 // for form validation
-var form = document.getElementById('form__messageUser');
-var errorMessage = document.getElementById('errorMessage');
 var inputUser = document.getElementById('user__name');
 var inputMessage = document.getElementById('user__message');
 var btnSend = document.getElementById('user__submit');
@@ -35,7 +32,6 @@ var emailNotification = document.getElementById('settings__emailNotification');
 var profileToPublic = document.getElementById('settings__profileToPublic');
 var timeZone = document.getElementById('settings__timeZone');
 var btnSave = document.getElementById('btn__save');
-var btnCancel = document.getElementById('btn__cancel');
 
 // for success message
 var modal = document.getElementById('modal');
@@ -56,12 +52,12 @@ function updateUserList(data) {
   var randomUsers = data.results;
 
   for (var i = 0; i < randomUsers.length; i++) {
-    var name = randomUsers[i].name.first.capitalize() + ' '
-              + randomUsers[i].name.last.capitalize();
+    var name = randomUsers[i].name.first.capitalize() + ' ' +
+               randomUsers[i].name.last.capitalize();
 
     userList.push(name);
   }
-};
+}
 
 function updateAutocompleteList(string) {
   var autocompleteHTML = '';
@@ -133,7 +129,7 @@ function checkValidation() {
 
   // Check user name
   if (inputUser.value === '') {
-    inputUser.placeholder = "You must input user's name!"
+    inputUser.placeholder = "You must input user's name!";
     inputUser.classList.add('invalid');
     valid = false;
   } else if (!userExist(inputUser.value)) {
@@ -145,7 +141,7 @@ function checkValidation() {
 
   // Check message
   if (inputMessage.value === '') {
-    inputMessage.placeholder = "Oops! Message is empty!"
+    inputMessage.placeholder = "Oops! Message is empty!";
     inputMessage.classList.add('invalid');
     valid = false;
   }
@@ -157,8 +153,8 @@ function checkValidation() {
 /* ==============================================================
  Remove invalid class on focus on inputs
 =============================================================== */
-inputUser.onfocus = function() { this.classList.remove('invalid'); }
-inputMessage.onfocus = function() { this.classList.remove('invalid'); }
+inputUser.onfocus = function() { this.classList.remove('invalid'); };
+inputMessage.onfocus = function() { this.classList.remove('invalid'); };
 
 
 /* ==============================================================

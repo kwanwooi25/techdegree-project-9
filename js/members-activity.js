@@ -21,21 +21,21 @@ function updateMemberActivityLists(data) {
 
     // store required data
     var thumbnail = randomUsers[i].picture.thumbnail;
-    var name = randomUsers[i].name.first.capitalize() + ' '
-              + randomUsers[i].name.last.capitalize();
+    var name = randomUsers[i].name.first.capitalize() + ' ' +
+              randomUsers[i].name.last.capitalize();
     var email = randomUsers[i].email;
     var registered = randomUsers[i].registered;
-    
+
     // shortten & rearrange registered date
-    var convertedDate = Number(registered.slice(8,10)) + '/'
-                      + Number(registered.slice(5, 7)) + '/'
-                      + Number(registered.slice(0, 4));
+    var convertedDate = Number(registered.slice(8,10)) + '/' +
+                        Number(registered.slice(5, 7)) + '/' +
+                        Number(registered.slice(0, 4));
 
     // generate random activity
-    var activity = ' '
-                 + randomActs[Math.floor(Math.random()*randomActs.length)]
-                 + ' '
-                 + randomPages[Math.floor(Math.random()*randomPages.length)];
+    var activity = ' ' +
+                  randomActs[Math.floor(Math.random()*randomActs.length)] +
+                  ' ' +
+                  randomPages[Math.floor(Math.random()*randomPages.length)];
 
     // generate random activity time
     var activityTime = Math.floor(Math.random()*10);
