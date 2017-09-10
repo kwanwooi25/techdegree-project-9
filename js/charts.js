@@ -92,6 +92,7 @@ chartTrafficList.addEventListener('click', function(e) {
   }
 });
 
+
 /* ======================================================
  DAILY TRAFFIC CHART
 ====================================================== */
@@ -125,6 +126,7 @@ var chartDailyTraffic = new Chart(dailyTrafficCtx, {
     }
   }
 });
+
 
 /* ======================================================
  MOBILE USERS CHART

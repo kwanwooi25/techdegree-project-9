@@ -36,7 +36,7 @@
   border-bottom: 1px solid $grey--xlight;
   box-shadow: inset 0px 0px 10px rgba($grey--xdark, .3);
   background-color: $grey--xxlight;
-  padding-right: 3em;
+  padding-right: 2em;
   @include flexbox;
   @include flex-alignment(end, center);
 }
@@ -55,7 +55,7 @@
 
 #btn__search {
   margin-left: -2.5em;
-  width: 0em;
+  width: 2em;
   border: none;
   background: none;
 }

@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,800");
 #input__search, #user__name,
-#user__message, #user__submit, #btn__save, #btn__cancel, .modal__button, canvas, .icon__notification:hover, .icon__nav:hover, .icon__nav--active, #notification__list, .custom-select, .slider, .chart-traffic-list a[active], .chart-traffic-list a:hover, .social {
+#user__message, #user__submit, #btn__save, #btn__cancel, .modal__button, canvas, #notification__list, .custom-select, .slider, .chart-traffic-list a[active], .chart-traffic-list a:hover, .social, #autocomplete__list {
   box-shadow: 1px 3px 10px rgba(126, 127, 126, 0.3); }
   #input__search:focus, #user__name:focus,
-  #user__message:focus, #user__submit:focus, #btn__save:focus, #btn__cancel:focus, .modal__button:focus, canvas:focus, .icon__notification:focus:hover, .icon__nav:focus:hover, .icon__nav--active:focus, #notification__list:focus, .custom-select:focus, .slider:focus, .chart-traffic-list a[active]:focus, .chart-traffic-list a:focus:hover, .social:focus {
+  #user__message:focus, #user__submit:focus, #btn__save:focus, #btn__cancel:focus, .modal__button:focus, canvas:focus, #notification__list:focus, .custom-select:focus, .slider:focus, .chart-traffic-list a[active]:focus, .chart-traffic-list a:focus:hover, .social:focus, #autocomplete__list:focus {
     box-shadow: 1px 5px 10px rgba(126, 127, 126, 0.4); }
 
 .nav__item, .nav__item--active {
@@ -480,7 +480,6 @@ main {
   margin: auto;
   width: 1.5rem;
   height: 1.5rem;
-  transition: .2s;
   fill: #fff; }
   .icon__notification:hover {
     fill: #cbdeff; }
@@ -488,7 +487,6 @@ main {
   margin: auto;
   width: 1.5rem;
   height: 1.5rem;
-  transition: .2s;
   fill: #cbcbcb; }
   .icon__nav:hover {
     fill: #fff; }
@@ -582,16 +580,16 @@ main {
   width: 50%;
   padding: 0;
   margin-top: .5em;
-  margin-left: -30%;
+  margin-left: -40%;
   border-radius: .5em; }
   #notification__list:before {
     border-width: 0 .5em .5em .5em;
-    border-color: transparent transparent #e5eeff transparent;
+    border-color: transparent transparent #fefeff transparent;
     border-style: solid;
     display: block;
     position: absolute;
     top: -.5em;
-    left: 60.5%;
+    left: 80.5%;
     content: ''; }
 
 .notification__new {
@@ -732,7 +730,7 @@ main {
   border-bottom: 1px solid #e4e5e4;
   box-shadow: inset 0px 0px 10px rgba(126, 127, 126, 0.3);
   background-color: #f1f1f1;
-  padding-right: 3em;
+  padding-right: 2em;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -758,7 +756,7 @@ main {
 
 #btn__search {
   margin-left: -2.5em;
-  width: 0em;
+  width: 2em;
   border: none;
   background: none; }
 
@@ -1190,7 +1188,8 @@ main {
   width: 100%;
   max-width: 100%;
   font-size: .9rem;
-  margin: .75em 0; }
+  margin: .75em 0;
+  display: block; }
   #user__name.invalid,
   #user__message.invalid {
     color: #FF8F93;
@@ -1201,7 +1200,7 @@ main {
 
 #user__message {
   resize: none;
-  height: 4.75em; }
+  height: 6.75em; }
 
 #user__submit {
   width: 100%; }
@@ -1211,6 +1210,52 @@ main {
   font-size: .8em;
   font-weight: 600;
   color: #FF8F93; }
+
+#autocomplete__list {
+  display: none;
+  position: absolute;
+  list-style: none;
+  margin-top: -.5em;
+  padding: 0;
+  border-radius: .5em;
+  background-color: #eff5ff; }
+
+.autocomplete__item {
+  padding: .5em;
+  width: 100%;
+  border-bottom: 1px solid #e5eeff;
+  background-color: #eff5ff;
+  cursor: default;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-items-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+  .autocomplete__item:first-child {
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em; }
+    .autocomplete__item:first-child:before {
+      border-width: 0 .5em .5em .5em;
+      border-color: transparent transparent #eff5ff transparent;
+      border-style: solid;
+      display: block;
+      position: absolute;
+      top: -.5em;
+      left: 1em;
+      content: ''; }
+  .autocomplete__item:last-child {
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em; }
+  .autocomplete__item:hover {
+    background-color: #e5eeff; }
 
 .settings_toggle {
   padding: .75em 0;

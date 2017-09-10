@@ -6,6 +6,7 @@ var notificationIcon = document.querySelector('.icon__notification');
 var notificationList = document.getElementById('notification__list');
 var notificationNew = document.querySelector('.notification__new');
 
+
 /* ==============================================================
  Function to display the number of new notifications
 =============================================================== */
@@ -20,6 +21,7 @@ function updateNotificationCount() {
 
 updateNotificationCount();
 
+
 /* ==============================================================
  Toggle New Notification List
 =============================================================== */
@@ -32,6 +34,16 @@ notificationIcon.addEventListener('click', function() {
     }
   }
 });
+
+// Hide notificationList on click event outside of the list
+document.addEventListener('click', function(e) {
+  if (!notificationList.contains(e.target)
+    && e.target.classList[0] !== 'icon__notification'
+    && e.target.classList[0] !== 'notification__remove') {
+    notificationList.style.display = 'none';
+  }
+});
+
 
 /* ==============================================================
  Remove Notification on Remove button click

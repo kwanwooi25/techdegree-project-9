@@ -24,12 +24,12 @@ function updateMemberActivityLists(data) {
     var name = randomUsers[i].name.first.capitalize() + ' '
               + randomUsers[i].name.last.capitalize();
     var email = randomUsers[i].email;
-    var registered = new Date(Date.parse(randomUsers[i].registered));
-
+    var registered = randomUsers[i].registered;
+    
     // shortten & rearrange registered date
-    var convertedDate = registered.getDate() + '/'
-                      + (registered.getMonth() + 1) + '/'
-                      + registered.getFullYear();
+    var convertedDate = Number(registered.slice(8,10)) + '/'
+                      + Number(registered.slice(5, 7)) + '/'
+                      + Number(registered.slice(0, 4));
 
     // generate random activity
     var activity = ' '

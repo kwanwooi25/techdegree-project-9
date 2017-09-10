@@ -290,12 +290,12 @@
           <div class="grid__col--6">
             <h2 class="component-title">Message User</h2>
             <form id="form__messageUser" action="index.html" method="post">
-              <input id="user__name" name="user__name" list="user__list" type="text" placeholder="Search for User" onclick="placeholder=''" onblur="placeholder='Search for User'">
-              <datalist id="user__list">
+              <input id="user__name" name="user__name" type="text" placeholder="Search for User" onclick="placeholder=''" onblur="placeholder='Search for User'">
+              <ul id="autocomplete__list">
                 <!-- ****************************************
                 list will be updated by JS
                 ***************************************** -->
-              </datalist>
+              </ul>
               <textarea id="user__message" name="user__message" placeholder="Message for User" onclick="placeholder=''" onblur="placeholder='Message for User'"></textarea>
               <button id="user__submit">SEND</button>
             </form>

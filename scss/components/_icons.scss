@@ -3,11 +3,9 @@
     margin: auto;
     width: 1.5rem;
     height: 1.5rem;
-    transition: .2s;
     fill: $white;
     &:hover {
       fill: lighten($color-primary--light, 10%);
-      @extend %shadow;
     }
   }
 
@@ -15,12 +13,10 @@
     margin: auto;
     width: 1.5rem;
     height: 1.5rem;
-    transition: .2s;
     fill: $grey--light;
 
     &:hover {
       fill: $white;
-      @extend %shadow;
     }
     @include mq(md) {
       width: 2rem;
@@ -33,7 +29,6 @@
       height: 1.5rem;
       transition: .2s;
       fill: $white;
-      @extend %shadow;
 
       @include mq(md) {
         width: 2rem;

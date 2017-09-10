@@ -21,6 +21,7 @@
 // for autocomplete user name
 var datalist = document.getElementById('user__list');
 var userList = [];
+var autocompleteList = document.getElementById('autocomplete__list');
 
 // for form validation
 var form = document.getElementById('form__messageUser');
@@ -44,6 +45,7 @@ var modalClose = document.getElementById('modal__close');
 var modalUserName = document.getElementById('user__name__modal');
 var modalUserMessage = document.getElementById('user__message__modal');
 
+
 /* ==============================================================
  Function to update autocomplete list
  1. get data from randomuser API through AJAX request
@@ -52,28 +54,61 @@ var modalUserMessage = document.getElementById('user__message__modal');
 =============================================================== */
 function updateUserList(data) {
   var randomUsers = data.results;
-  var datalistHTML = '';
 
   for (var i = 0; i < randomUsers.length; i++) {
     var name = randomUsers[i].name.first.capitalize() + ' '
               + randomUsers[i].name.last.capitalize();
 
     userList.push(name);
-    datalistHTML += `
-      <option class="user__list__item" index="${i}" value="${userList[i]}">
-    `;
   }
-  datalist.innerHTML = datalistHTML;
+};
+
+function updateAutocompleteList(string) {
+  var autocompleteHTML = '';
+  for (var i = 0; i < userList.length; i++) {
+    if (userList[i].toLowerCase().indexOf(string.toLowerCase()) !== -1) {
+      autocompleteHTML += `
+        <li class="autocomplete__item" index="${i}">${userList[i]}</li>
+      `;
+    }
+  }
+  autocompleteList.innerHTML = autocompleteHTML;
 }
 
 // get 20 random user data
 $.ajax({
-  url: 'https://randomuser.me/api/?results=20',
+  url: 'https://randomuser.me/api/?results=10',
   dataType: 'json',
   success: function(data) {
     updateUserList(data);
   }
 });
+
+// Hide autocompleteList on click event outside of the list
+document.addEventListener('click', function(e) {
+  if (!autocompleteList.contains(e.target)) {
+    autocompleteList.style.display = 'none';
+  }
+});
+
+// Update autocompleteList on inputUser change
+inputUser.addEventListener('keyup', function() {
+  if (this.value !== '') {
+    updateAutocompleteList(this.value);
+    if (autocompleteList.children.length !== 0) {
+      autocompleteList.style.display = 'block';
+    }
+  } else {
+    autocompleteList.style.display = 'none';
+  }
+});
+
+// Set inputUser value on autocompleteList item click
+autocompleteList.addEventListener('click', function(e) {
+  inputUser.value = e.target.textContent;
+  this.style.display = 'none';
+});
+
 
 /* ==============================================================
  Function to check if the user exist
@@ -86,6 +121,7 @@ function userExist(user_name) {
   }
   return false;
 }
+
 
 /* ==============================================================
  Function to check validation for sending message
@@ -117,11 +153,13 @@ function checkValidation() {
   return valid;
 }
 
+
 /* ==============================================================
  Remove invalid class on focus on inputs
 =============================================================== */
 inputUser.onfocus = function() { this.classList.remove('invalid'); }
 inputMessage.onfocus = function() { this.classList.remove('invalid'); }
+
 
 /* ==============================================================
  On 'SEND' button click,
@@ -138,40 +176,49 @@ btnSend.addEventListener('click', function(e) {
   }
 });
 
+
 /* ==============================================================
  On 'SAVE' button click,
  - Show modal message
  - Save settings on local storage
 =============================================================== */
-
 btnSave.addEventListener('click', function(e) {
   e.preventDefault();
   modal.style.display = 'block';
   modalMessage.style.display = 'none';
   modalSettings.style.display = 'block';
+  try {
+    localStorage.setItem('emailNotification', emailNotification.checked);
+    localStorage.setItem('profileToPublic', profileToPublic.checked);
+    localStorage.setItem('timeZone', timeZone.selectedIndex);
+  } catch(error) {
+    console.log(error);
+  }
 
-  localStorage.setItem('emailNotification', emailNotification.checked);
-  localStorage.setItem('profileToPublic', profileToPublic.checked);
-  localStorage.setItem('timeZone', timeZone.selectedIndex);
 });
+
 
 /* ==============================================================
  Retrieve the saved settings on local storage
 =============================================================== */
+try {
+  if (JSON.parse(localStorage.getItem('emailNotification'))) {
+    emailNotification.checked = true;
+  } else {
+    emailNotification.checked = false;
+  }
 
-if (JSON.parse(localStorage.getItem('emailNotification'))) {
-  emailNotification.checked = true;
-} else {
-  emailNotification.checked = false;
+  if (JSON.parse(localStorage.getItem('profileToPublic'))) {
+    profileToPublic.checked = true;
+  } else {
+    profileToPublic.checked = false;
+  }
+
+  timeZone.selectedIndex = localStorage.getItem('timeZone');
+} catch(error) {
+  console.log(error);
 }
 
-if (JSON.parse(localStorage.getItem('profileToPublic'))) {
-  profileToPublic.checked = true;
-} else {
-  profileToPublic.checked = false;
-}
-
-timeZone.selectedIndex = localStorage.getItem('timeZone');
 
 /* ==============================================================
  Hide modal message on 'OK' button click
@@ -180,7 +227,7 @@ timeZone.selectedIndex = localStorage.getItem('timeZone');
   - if the modal was for Settings Widget,
     do nothing
 =============================================================== */
-modalClose.addEventListener('click', function() {
+modalClose.addEventListener('click', function(e) {
   if (modalSettings.style.display === 'none') {
     inputUser.value = '';
     inputMessage.value = '';
