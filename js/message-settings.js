@@ -73,7 +73,7 @@ function updateAutocompleteList(string) {
 
 // get 20 random user data
 $.ajax({
-  url: 'https://randomuser.me/api/?results=10,nat=us,gb,au',
+  url: 'https://randomuser.me/api/?results=10&nat=us,gb,au',
   dataType: 'json',
   success: function(data) {
     updateUserList(data);
